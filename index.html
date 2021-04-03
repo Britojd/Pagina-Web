@@ -146,7 +146,7 @@
 
 		<script>
 			const Modal = {
-				open() {
+				open(){
 					//Abrir Modal
 					//Adicionar a class activate ao modal
 					document
@@ -155,10 +155,11 @@
 						.add('active')
 
 				},
-				close() {
+				close(){
 				//Fechar o Modal
 				//Remover a class active do modal
-				.querySelector('.modal-overlay')
+				document
+					.querySelector('.modal-overlay')
 					.classList
 					.remove('active')
 			}
