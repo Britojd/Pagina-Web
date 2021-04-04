@@ -18,40 +18,38 @@ const Modal = {
     }
 }
 
-const transactions = [
-    {
-        id: 1,
-        description: 'Luz',
-        amount: -50000,
-        date: '23/01/2021',
-    },
-    {
-        id: 2,
-        description: 'Website',
-        amount: 500000,
-        date: '23/01/2021',
-    },
-    {
-        id: 3,
-        description: 'Internet',
-        amount: -20000,
-        date: '23/01/2021',
-    },
-    {
-        id: 4,
-        description: 'App',
-        amount: 200000,
-        date: '23/01/2021',
-    },
-]
-
 const Transaction = {
-    all: transactions,
-
+    all: [
+        {
+            description: 'Luz',
+            amount: -50001,
+            date: '23/01/2021',
+        },
+        {
+            description: 'Website',
+            amount: 500000,
+            date: '23/01/2021',
+        },
+        {
+            description: 'Internet',
+            amount: -20012,
+            date: '23/01/2021',
+        },
+        {
+            description: 'App',
+            amount: 200000,
+            date: '23/01/2021',
+        },
+    ],
     add(transaction){
         Transaction.all.push(transaction)
 
-        console.log(Transaction.all)
+        App.reload()
+    },
+    remove(index){
+        Transaction.all.splice(index, 1)
+
+        App.reload()
     },
     incomes(){
         let income = 0
@@ -114,6 +112,10 @@ const DOM = {
         document
             .getElementById('totalDisplay')
             .innerHTML = Utils.formatCurrency(Transaction.total())
+    },
+
+    clearTransactions(){
+        DOM.transactionsContainer.innerHTML = ""
     }
 }
 
@@ -134,14 +136,57 @@ const Utils = {
     }
 }
 
-const App = {
-    init() {},
-    reload() {},
+const Form = {
+    description: document.querySelector('input#description'),
+    amount: document.querySelector('input#amount'),
+    date: document.querySelector('input#date'),
+
+    getValues(){
+        return{
+            description: Form.description.value,
+            amount: Form.amount.value,
+            date: Form.date.value
+        }
+    },
+    validateFields(){
+        const {description, amount, date} = Form.getValues()
+
+        if(
+            description.trim() === "" ||
+            amount.trim() === "" ||
+            date.trim() === "" ) {
+                throw new Error("Por favor, preencha todos os campos")
+        }
+    },
+    submit (event) {
+        event.preventDefault()
+
+        try{
+            Form.validateFields()
+            //Form.formatData()
+
+        } catch (error){
+            alert(error.message)
+        }
+    }
 }
 
-transactions.forEach(function(transaction){
-    DOM.addTransaction(transaction)
-})
+const App = {
+    init() {
+        Transaction.all.forEach(transaction =>{
+            DOM.addTransaction(transaction)
+        })
+        
+        DOM.updateBalance()
 
-DOM.updateBalance()
+    },
+    reload() {
+        DOM.clearTransactions()
+        App.init()
+    },
+}
+
+App.init()
+
+
 
