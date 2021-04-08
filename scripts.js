@@ -42,7 +42,7 @@ const Transaction = {
         App.reload()
     },
     incomes(){
-        let income = 0
+        let income = 0;
         Transaction.all.forEach(transaction => {
             if( transaction.amount > 0){
                 income += transaction.amount;
@@ -51,7 +51,7 @@ const Transaction = {
         return income;
     },
     expenses(){
-        let expense = 0
+        let expense = 0;
         Transaction.all.forEach(transaction => {
             if( transaction.amount < 0){
                 expense += transaction.amount;
@@ -182,7 +182,7 @@ const Form = {
 
         try{
             Form.validateFields()
-            const transaction = Form.formatValues(transaction)
+            const transaction = Form.formatValues()
             Transaction.add(transaction)
             Form.clearFields()
             Modal.close()
