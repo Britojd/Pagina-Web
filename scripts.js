@@ -117,7 +117,7 @@ const Utils = {
         return value        
     },
     formatDate(date){
-        const splittedDate = date.slipt("-")
+        const splittedDate = date.split("-")
 
         return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
     },
@@ -164,7 +164,7 @@ const Form = {
 
         amount = Utils.formatAmount(amount)
 
-        date = Utils.formatDate
+        date = Utils.formatDate(date)
         return{
             description,
             amount,
