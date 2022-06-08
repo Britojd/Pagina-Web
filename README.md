@@ -1,4 +1,4 @@
-# OriginSix
+# Dev.Finances
 
 ![GitHub](https://img.shields.io/github/license/JuuanMatheus/NLW-6)
 
@@ -6,7 +6,7 @@
 
 Em busca de práticar e evoluir o conhecimento de desenvolvimento web, resolvi participar da Next Level Week, evento no qual desenvolvemos um site com uma semana imersiva cheia de aprendizados.
 
-## :computer: Dev.finances
+## :computer: Dev.Finances
 
 [Dev.finances](https://juuanmatheus.github.io/Dev.finances/) é uma página institucional no formato One Page, responsiva, para usar em diversos tipos de micro, pequena e média empresas. Contém as seguintes seções: Header, Navigation, Home, Sobre, Serviços, Depoimentos, Contato e Footer.
 
