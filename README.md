@@ -8,7 +8,7 @@ Em busca de práticar e evoluir o conhecimento de desenvolvimento web, resolvi p
 
 ## :computer: Dev.Finances
 
-[Dev.finances](https://juuanmatheus.github.io/Dev.finances/) é uma página institucional no formato One Page, responsiva, para usar em diversos tipos de micro, pequena e média empresas. Contém as seguintes seções: Header, Navigation, Home, Sobre, Serviços, Depoimentos, Contato e Footer.
+[Dev.finances](https://juuanmatheus.github.io/Dev.Finances/) é uma página de finanças responsiva, na qual recebe receitas e despesas de seu usuário com intuito de auxiliar no gerenciamento de dinheiro.
 
 ## :robot: Tecnologias
 
